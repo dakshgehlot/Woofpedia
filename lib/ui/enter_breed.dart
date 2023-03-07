@@ -21,52 +21,48 @@ class EnterBreed extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,
-            children: <Widget>[
+            children: [
               const Text(
                 "Woofpedia",
                 style: TextStyle(
                     fontFamily: 'BebasNeue', color: Colors.grey, fontSize: 50),
               ),
-              Container(
-                width: double.infinity,
-                child: TextField(
-                  controller: textController,
-                  decoration: InputDecoration(
-                    labelText: "Enter breed",
-                    labelStyle: const TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Poppins'),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 3.0),
-                    ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 3.0),
-                    ),
-                    suffixIcon: IconButton(
-                      icon: const Icon(Icons.search, color: Colors.grey),
-                      splashColor: Colors.black,
-                      tooltip: 'Done',
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    Loading(name: textController.text.trim())));
-                      },
-                    ),
-                  ),
-                  style: const TextStyle(
+              TextField(
+                controller: textController,
+                decoration: InputDecoration(
+                  labelText: "Enter breed",
+                  labelStyle: const TextStyle(
+                      color: Colors.grey,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'Poppins',
-                      color: Colors.grey),
-                  onSubmitted: (text) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Loading(name: text.trim())));
-                  },
+                      fontFamily: 'Poppins'),
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 3.0),
+                  ),
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 3.0),
+                  ),
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.search, color: Colors.grey),
+                    tooltip: 'Done',
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  Loading(name: textController.text.trim())));
+                    },
+                  ),
                 ),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Poppins',
+                    color: Colors.grey),
+                onSubmitted: (text) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Loading(name: text.trim())));
+                },
               ),
             ],
           ),

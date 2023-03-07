@@ -3,14 +3,14 @@ import 'package:http/http.dart';
 
 class DogApi{
 
-  late String inputBreedName;
-  late String name = 'Could not get details!';
-  late String weight = '-N/A-';
-  late String height = '-N/A-';
-  late String lifeSpan = '-N/A-';
-  late String temperament = '-N/A-';
-  late String imgRefId = '-N/A-';
-  late String imgUrl = '-N/A-';
+  String inputBreedName;
+  String name = 'Could not get details!';
+  String weight = '-N/A-';
+  String height = '-N/A-';
+  String lifeSpan = '-N/A-';
+  String temperament = '-N/A-';
+  String imgRefId = '-N/A-';
+  String imgUrl = '-N/A-';
 
   DogApi({required this.inputBreedName});
 

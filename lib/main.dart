@@ -10,8 +10,7 @@ void main() {
     routes: {
       '/': (context) => const EnterBreed(),
       '/details': (context) => const BreedDetails(),
-      '/loading': (context) => const Loading(name: '',)
+      '/loading': (context) => const Loading(name: '')
     },
   ));
 }
-
